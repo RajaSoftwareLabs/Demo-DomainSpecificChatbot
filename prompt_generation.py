@@ -15,15 +15,15 @@ class PromptGeneration():
     def __qa_prompt_with_previous_conv(self) -> PromptTemplate:
         """Returns prompt template when previous conversation is available."""
 
-        prompt_text = """You are a proficient authority in Question & Answer. Use the following pieces of PREVIOUS_CONVERSATION, CONTEXT to answer the user's QUESTION. If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        prompt_text = """Act as a smart assistant in a hospital. Use the following pieces of CONTEXT, PREVIOUS_CONVERSATION to answer the user's QUESTION related to the hospital environment. If you don't know the answer, just say that you don't know, don't try to make up an answer.
 
-    PREVIOUS_CONVERSATION: {previous_conversation}
+    CONTEXT: ```{context}```
 
-    CONTEXT: {context}
+    PREVIOUS_CONVERSATION: ```{previous_conversation}```
 
     QUESTION: {question}
 
-    It is very IMPORTANT that after providing a complete answer for the QUESTION, and with that you also need to provide JSON with a "summary" key containing a very short summary of your answer and a "question" key containing the asked QUESTION.
+    It is very IMPORTANT that after providing a complete answer for the QUESTION, you also need to provide JSON with a "summary" key containing a very short summary of your answer and a "question" key containing the asked QUESTION.
     """
 
         prompt_template = PromptTemplate(template=prompt_text, input_variables=[
@@ -36,13 +36,13 @@ class PromptGeneration():
         prior interactions.
         """
 
-        prompt_text = """You are a proficient authority in Question & Answer. Use the following pieces of CONTEXT to answer the user's QUESTION. If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        prompt_text = """Act as a smart assistant in a hospital. Use the following pieces of CONTEXT to answer the user's QUESTION related to the hospital environment. If you don't know the answer, just say that you don't know, don't try to make up an answer.
 
-    CONTEXT: {context}
+    CONTEXT: ```{context}```
 
     QUESTION: {question}
 
-    It is very IMPORTANT that after providing a complete answer for the QUESTION, and with that you also need to provide JSON with a "summary" key containing a very short summary of your answer and a "question" key containing the asked QUESTION.
+    It is very IMPORTANT that after providing a complete answer for the QUESTION, you also need to provide JSON with a "summary" key containing a very short summary of your answer and a "question" key containing the asked QUESTION.
     """
 
         prompt_template = PromptTemplate(

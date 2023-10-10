@@ -10,7 +10,7 @@ from os import walk
 
 
 class LoadCustomData():
-    """Class which helps in loading different types of file in loaders."""
+    """Class which helps to load different file types using LangChain loaders."""
 
     def load_custom_data(
         self,
@@ -29,7 +29,7 @@ class LoadCustomData():
         return loaders
 
     def __get_loader(self, dir_path: str, filename: str, file_extension: str):
-        """Returns the Langchain loader for the provided file_extension."""
+        """Returns the Langchain loader for the provided file extension."""
 
         file_path = dir_path + filename + file_extension
         match file_extension:

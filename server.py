@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 
 def extract_response(json_str: str):
-    """Extracting user question and id from the request."""
+    """Extract user's question and id from the request."""
     question = ""
     userId = ""
     json_from_response = json.loads(json_str)

@@ -22,7 +22,7 @@ class ManageConversations():
             if "summary" in json_object:
                 answer = json_object["summary"]
 
-        self.__save_converstaion(question, answer, userId)
+            self.__save_converstaion(question, answer, userId)
 
     def get_previous_converstions(self, userId: str) -> str:
         """Retrieves stored conversations from MongoDB for the given user ID."""
@@ -30,7 +30,7 @@ class ManageConversations():
             connection_string=self.__connection_string, session_id=userId)
         prev_conv = ""
         for msg in reversed(message_history.messages):
-            prev_conv = msg.content + prev_conv + " "
+            prev_conv = msg.content + " " + prev_conv + " "
 
         return prev_conv
 

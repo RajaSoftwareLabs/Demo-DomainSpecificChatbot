@@ -15,44 +15,44 @@ class Main():
     """
 
     def __init__(self):
-        # Loading OpenAI API key from environment variable.
+        # Load OpenAI API key from environment variable.
         load_dotenv()
         openai.api_key = os.environ["OPENAI_API_KEY"]
         
-        # Enabling langchain debugging mode which prints steps which are being executed.
+        # Enable langchain debugging mode which prints steps which are being executed.
         langchain.debug = True
 
-    def start_chat(self, uesr_query: str, userId: str) -> str:
+    def start_chat(self, user_query: str, userId: str) -> str:
         """Function initiates chatting with OpenAI's GPT 3.5 Turbo LLM. 
         It uses domain specific knowledge base as context and takes previous
         conversations into account while giving responses.
         """
 
-        # Selecting LLM with randomness in the generated text and the GPT model.
+        # Select LLM with randomness in the generated text and the GPT model.
         llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo")
 
-        # Extracting previous conversations and questions.
+        # Extract previous conversations and questions.
         manage_conversation = ManageConversations()
         prev_conversation = manage_conversation.get_previous_converstions(
             userId)
 
-        # Generating prompt based on previous conversation and selecting chains.
+        # Generate prompt based on previous conversation.
         prompt_template = PromptGeneration().generate_prompt(prev_conversation)
         chain = LLMChain(llm=llm, prompt=prompt_template)
 
-        # Appeding all user queries for similarity search.
-        question = uesr_query
+        # Apped all user queries for similarity search.
+        question = user_query
         if (prev_conversation and prev_conversation.strip()):
-            question = uesr_query + prev_conversation
+            question = user_query + prev_conversation
         context = QuerySearch().similarity_search(query=question)
 
-        # Invoking chains based on availibility of past conversations.
+        # Invoke chains based on availibility of past conversations.
         if (prev_conversation and prev_conversation.strip()):
-            response = chain({"question": uesr_query, "context": context,
+            response = chain({"question": user_query, "context": context,
                              "previous_conversation": prev_conversation})
         else:
-            response = chain({"question": uesr_query, "context": context})
+            response = chain({"question": user_query, "context": context})
 
-        # Extracting conversation and saving it.
+        # Extract conversation and save it.
         manage_conversation.extract_and_save_conversation(response, userId)
         return response["text"]

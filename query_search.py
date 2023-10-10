@@ -8,16 +8,16 @@ class QuerySearch():
 
     __score_threshold = 0.75
     """Floating point value between 0 to 1 to filter the resulting set of retrieved docs"""
-    __no_of_doc_to_return = 5
+    __no_of_doc_to_return = 3
     """Number of Documents to return."""
 
     def similarity_search(self, query: str) -> str:
         """Does the similarity search on FAISS vector store returns context based on the query."""
 
-        # Getting the knowledge base from FAISS.
+        # Get the knowledge base from FAISS.
         faiss = StoreEmbeddings().get_faiss_database_with_all_docs()
 
-        # Doing cosine similarity search with query in the knowledge base.
+        # Cosine similarity search with query in the knowledge base.
         retrieved_documents = faiss.similarity_search_with_score(
             query, search_kwargs={
                 "score_threshold": self.__score_threshold, "k": self.__no_of_doc_to_return})
