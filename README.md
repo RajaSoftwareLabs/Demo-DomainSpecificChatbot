@@ -3,9 +3,9 @@ This is an implementation of a Domain-specific Chatbot powered by GPT models. Th
 
 The Chatbot implementation includes functionalities such as diverse data handling, embedding generation, storage of embeddings in FAISS (a vector store), creating dynamic prompts, integrating with MongoDB to store user conversations, provision of an accessible API endpoint for integration with mobile and web apps, and integrating with the OpenAI Chat Completion API. Additionally, it has few files containing mock hospital data and a requirements file listing all necessary libraries for running this project.
 
-# Prerequisites
-You will need the following things to run the Chatbot:
-1. Install all the libraries listed in the [requirements](https://github.com/RajaSoftwareLabs/Demo-DomainSpecificChatbot/blob/main/requirements.txt) file.
+# Pre-requisites
+Since the entire project is in Python, you need to have [python](https://wiki.python.org/moin/BeginnersGuide/Download), [pip](https://pip.pypa.io/en/stable/installation/), and [virtualenv](https://virtualenv.pypa.io/en/latest/installation.html) libraries installed. Additionally, to run the Chatbot, make sure you have the following:
+1. Install the necessary libraries for the chatbot listed in the [requirements](https://github.com/RajaSoftwareLabs/Demo-DomainSpecificChatbot/blob/main/requirements.txt) file by running the command `pip install -r requirements.txt`.
 2. Obtain an OpenAI API key (as mentioned [here](https://help.openai.com/en/articles/4936850-where-do-i-find-my-secret-api-key)) and store it in the [environment](https://github.com/RajaSoftwareLabs/Demo-DomainSpecificChatbot/blob/main/.env) file.
 3. Get a MongoDB connection string (as mentioned [here](https://www.mongodb.com/basics/mongodb-connection-string#:~:text=How%20to%20get%20your%20MongoDB%20Atlas%20connection%20string)) and use it in the [manage conversations](https://github.com/RajaSoftwareLabs/Demo-DomainSpecificChatbot/blob/d0e6585d9961f7e608a6fda742a9cbec09919b43/manage_conversations.py#L9) file.
 
