@@ -29,7 +29,7 @@ class ManageConversations():
         message_history = MongoDBChatMessageHistory(
             connection_string=self.__connection_string, session_id=userId)
         prev_conv = ""
-        for msg in reversed(message_history.messages):
+        for msg in reversed((message_history.messages[-5:])):
             prev_conv = msg.content + " " + prev_conv + " "
 
         return prev_conv
