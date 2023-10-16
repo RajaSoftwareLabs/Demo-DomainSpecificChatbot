@@ -14,16 +14,18 @@ After that, run the local server by invoking [server.py](https://github.com/Raja
 # Chatbot in Action
 Following GIF demonstrates the Chatbot's functionality when the API endpoint is hit with user query and userId.
 
-![alt text](https://github.com/rsl-jainishchampaneria/QA-OpenAI-langchain-custom-data/assets/138757720/55850b28-846c-43c5-a5f6-f1e0e56a7be2 "Chatbot in action")
+![alt text](https://github.com/RajaSoftwareLabs/Demo-DomainSpecificChatbot/assets/138757720/bda91105-11cf-46ab-a194-0778eb59dd5e "Chatbot in Action")
+
+---
 
 The GIF below provides a glimpse into the action that happens behind the scenes.
 
-![alt text](https://github.com/rsl-jainishchampaneria/QA-OpenAI-langchain-custom-data/assets/138757720/18c82068-18f2-4869-8717-b9ad47704975 "BTS Chatbot")
+![alt text](https://github.com/RajaSoftwareLabs/Demo-DomainSpecificChatbot/assets/138757720/60d83297-0a6f-44c7-8e87-7b0256473a50 "BTS Chatbot")
 
-# RAG Architecture (used for the Chatbot)
-The RAG (Retrieval Augmented Generation) technique combines an LLM (Large Language Model) with an Information Retrieval (IR) system. The LLM is responsible for generating text, while the IR system retrieves relevant information from a knowledge base. Essentially, it retrieves relevant information from a large dataset based on a user query and then encapsulates this information with the query in a prompt, serving as an instruction for the LLM to generate a response accordingly.
+# RAG Architecture
+The RAG (Retrieval Augmented Generation) technique is used to build the Chatbot. The technique combines an LLM (Large Language Model) with an Information Retrieval (IR) system. The LLM is responsible for generating text, while the IR system retrieves relevant information from a knowledge base. Essentially, it retrieves relevant information from a large dataset based on a user query and then encapsulates this information with the query in a prompt, serving as an instruction for the LLM to generate a response accordingly.
 
-![alt text](https://github.com/rsl-jainishchampaneria/QA-OpenAI-langchain-custom-data/assets/138757720/77ed5aa8-7d12-4a1b-98fb-be4cb5321d1b "RAG Architecture")
+![alt text](https://github.com/RajaSoftwareLabs/Demo-DomainSpecificChatbot/assets/138757720/106cd1bf-c6e5-4eca-9d39-9bf6ed6450e3 "RAG Architecture")
 
 # Note
 This code/software is NOT licensed and is not open for use/change/distribution. Please open an issue / pull-request if you require the same.
