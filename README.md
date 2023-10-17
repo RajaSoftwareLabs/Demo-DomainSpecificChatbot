@@ -3,6 +3,8 @@ This is an implementation of a Domain-specific Chatbot powered by GPT models. Th
 
 The Chatbot implementation includes functionalities such as diverse data handling, embedding generation, storage of embeddings in FAISS (a vector store), creating dynamic prompts, integrating with MongoDB to store user conversations, provision of an accessible API endpoint for integration with mobile and web apps, and integrating with the OpenAI Chat Completion API. Additionally, it has few files containing mock hospital data and a requirements file listing all necessary libraries for running this project.
 
+Explore the artical at https://rajasoftwarelabs.com/blog/data-to-dialogue-custom-data-chatbots-using-chatgpt linked to this code demo. The artical provides code explanations to assist you in creating similar chatbots and explores the RAG technique.
+
 # Pre-requisites
 Since the entire project is in Python, you need to have [python](https://wiki.python.org/moin/BeginnersGuide/Download), [pip](https://pip.pypa.io/en/stable/installation/), and [virtualenv](https://virtualenv.pypa.io/en/latest/installation.html) libraries installed. Additionally, to run the Chatbot, make sure you have the following:
 1. Install the necessary libraries for the chatbot listed in the [requirements](https://github.com/RajaSoftwareLabs/Demo-DomainSpecificChatbot/blob/main/requirements.txt) file by running the command `pip install -r requirements.txt`.
@@ -14,18 +16,18 @@ After that, run the local server by invoking [server.py](https://github.com/Raja
 # Chatbot in Action
 Following GIF demonstrates the Chatbot's functionality when the API endpoint is hit with user query and userId.
 
-![alt text](https://github.com/RajaSoftwareLabs/Demo-DomainSpecificChatbot/assets/138757720/bda91105-11cf-46ab-a194-0778eb59dd5e "Chatbot in Action")
+![alt text](https://rajasoftwarelabs.com/uploads/blog_data_to_dialogue_custom_data_chatbots_using_chatgpt_chatbot_in_action_30b81f3ab8.gif "Chatbot in Action")
 
 ---
 
 The GIF below provides a glimpse into the action that happens behind the scenes.
 
-![alt text](https://github.com/RajaSoftwareLabs/Demo-DomainSpecificChatbot/assets/138757720/60d83297-0a6f-44c7-8e87-7b0256473a50 "BTS Chatbot")
+![alt text](https://rajasoftwarelabs.com/uploads/blog_data_to_dialogue_custom_data_chatbots_using_chatgpt_bts_chatbot_92d1964ec9.gif "BTS Chatbot")
 
 # RAG Architecture
 The RAG (Retrieval Augmented Generation) technique is used to build the Chatbot. The technique combines an LLM (Large Language Model) with an Information Retrieval (IR) system. The LLM is responsible for generating text, while the IR system retrieves relevant information from a knowledge base. Essentially, it retrieves relevant information from a large dataset based on a user query and then encapsulates this information with the query in a prompt, serving as an instruction for the LLM to generate a response accordingly.
 
-![alt text](https://github.com/RajaSoftwareLabs/Demo-DomainSpecificChatbot/assets/138757720/106cd1bf-c6e5-4eca-9d39-9bf6ed6450e3 "RAG Architecture")
+![alt text](https://rajasoftwarelabs.com/uploads/blog_data_to_dialogue_custom_data_chatbots_using_chatgpt_rag_arch_0fdb3954cc.webp "RAG Architecture")
 
-# Note
-This code/software is NOT licensed and is not open for use/change/distribution. Please open an issue / pull-request if you require the same.
+> __Note__
+> This code/software is NOT licensed and is not open for use/change/distribution. Please open an issue / pull-request if you require the same.
